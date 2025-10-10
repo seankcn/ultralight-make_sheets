@@ -321,7 +321,7 @@ class UnderdarkSpells(_CircleSpells):
 
 
 class SporesSpells(_CircleSpells):
-    """Your symbiotic link do fungus and your ability to tap into the cycle of
+    """Your symbiotic link to fungus and your ability to tap into the cycle of
     life and death grants you access to certain spells.
 
     These spells are included in your Spell Sheet.
