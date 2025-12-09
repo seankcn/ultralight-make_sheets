@@ -1,7 +1,0 @@
-[% for section in sections %]
-
-<h1 id="extra-[[ section.name | to_heading_id ]]">[[ section.name ]]</h1>
-
-[[ section.__doc__ | rst_to_html ]]
-
-[% endfor %]

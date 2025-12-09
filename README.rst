@@ -1,42 +1,20 @@
 ================
- Dungeon Sheets
+ Ultralight Make Sheets
 ================
 
-A tool to create character sheets and session notes for Dungeons and
-Dragons 5th edition (D&D 5e).
-
-.. image:: https://travis-ci.com/canismarko/dungeon-sheets.svg?branch=master
-   :target: https://travis-ci.com/canismarko/dungeon-sheets
-   :alt: Build status
-
-.. image:: https://coveralls.io/repos/github/canismarko/dungeon-sheets/badge.svg
-   :target: https://coveralls.io/github/canismarko/dungeon-sheets
-   :alt: Test coverage status
-
-.. image:: https://readthedocs.org/projects/dungeon-sheets/badge/?version=latest
-   :target: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
-   :alt: Documentation Status
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
-
-Documentation
-=============
-
-Documentation can be found on readthedocs_.
-
-.. _readthedocs: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
-
+A tool to create minimal character sheets for Dungeons and
+Dragons 5th edition (D&D 5.5e) based on dungeonsheets https://github.com/canismarko/dungeon-sheets.
 
 Docker
 ======
 You can run this repository directly from a container.
 
-Run the following in a directory with valid character files (such as the examples_ directory):
+Run the following in the root of the repository. Substituting $(pwd) for a path containing valid character files:
 
 .. code:: bash
 
-    $ docker run -it -v $(pwd):/build ghcr.io/canismarko/dungeon-sheets:master
+    $ docker build -t ultralight-make_sheets:latest .
+    $ docker run $(pwd):/build ultralight-make_sheets:latest
 
 
 Installation
@@ -44,45 +22,22 @@ Installation
 
 .. code:: bash
 
-    $ pip install dungeonsheets
+    $ pip install .
 
-.. note::
-
-   Dungeon sheets requires **at least python 3.6**. This is mostly due
-   to the liberal use of f-strings_. If you want to use it with
-   previous versions of python 3, you'll probably have to replace all
-   the f-strings with the older ``.format()`` method or string
-   interpolation.
-
-.. _f-strings: https://www.python.org/dev/peps/pep-0498/
 
 Optional External dependencies
 ==============================
 
-* You may use **pdftk** to generate the sheets in PDF format.
 * You will need **pdflatex**, and a few latex packages, installed to
   generate the PDF spell pages (optional).
 
-If **pdftk** is available, it will be used for pdf generation. If not,
-a fallback python library (pypdf) will be used. This has the
-limitation that it is not able to flatten PDF forms.
-  
-Different linux distributions have different names for packages. While
-pdftk is available in Debian and derivatives as **pdftk**, the package
-is not available in some RPM distributions, such as Fedora and CentOS.
-One alternative would be to build your PC sheets using docker.
-
-If the ``pdflatex`` command is available on your system, spellcasters
-will include a spellbook with descriptions of each spell known. If
-not, then this feature will be skipped.
-
 In order to properly format descriptions for spells/features/etc.,
 some additional latex packages are needed. On Ubuntu these can be
-install with:
+installed with:
 
 .. code:: bash
 
-    $ sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+    $ sudo apt-get -y install texlive-latex-base texlive-latex-extra texlive-fonts-recommended
 
 Usage
 =====
@@ -92,12 +47,11 @@ JSON) file, which gives many attributes associated with the
 character. See examples_ for more information about the character
 descriptions.
 
-.. _examples: https://github.com/canismarko/dungeon-sheets/tree/master/examples
+.. _examples: https://github.com/seankcn/ultralight-make_sheets/tree/master/examples
 
 The PDF's can then be generated using the ``makesheets`` command. If
 no filename is given, the current directory will be parsed and any
-valid files found will be processed. If the ``--recursive`` option is
-used, sub-folders will also be parsed.
+valid files found will be processed.
 
 .. code:: bash
 
@@ -107,17 +61,9 @@ used, sub-folders will also be parsed.
 dungeon-sheets contains definitions for standard weapons and spells,
 so attack bonuses and damage can be calculated automatically.
 
-Consider using the ``-F`` option to include the excellent D&D 5e
-template for rendering spellbooks, druid wild forms and features
-pages (https://github.com/rpgtex/DND-5e-LaTeX-Template).
-
 By default, your character's spells are ordered alphabetically. If you
 would like your spellbook to be ordered by level, you can use the ``-S``
 option to do so.
-
-If you'd like a **step-by-step walkthrough** for creating a new
-character, just run ``create-character`` from a command line and a
-helpful menu system will take care of the basics for you.
 
 
 Content Descriptions
@@ -126,7 +72,7 @@ Content Descriptions
 The descriptions of content elements (e.g. classes, spells, etc.) are
 included in docstrings. The descriptions should ideally conform to
 reStructured text. This allows certain formatting elements to be
-properly parsed and rendered into LaTeX or HTML::
+properly parsed and rendered into LaTeX::
 
   class Scrying(Spell):
     """You can see and hear a particular creature you choose that is on
