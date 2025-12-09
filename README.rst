@@ -2,7 +2,7 @@
  Ultralight Make Sheets
 ================
 
-A very lightweight tool to create minimal character sheets for Dungeons and
+A super lightweight tool to create minimal character sheets for Dungeons and
 Dragons 5th edition 2024 (D&D 5e) based on dungeonsheets_ and using `minimal latex docker images`_.
 
 .. _dungeonsheets: https://github.com/canismarko/dungeon-sheets
