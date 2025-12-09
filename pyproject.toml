@@ -6,9 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "ul_make_sheets"
 version = "0.0.0"
 authors = [
-  {name="Sean Kilcullen", email="seankilcullen567@gmail.com"},
+  {name="Sean Kilcullen", email="seankilcullen@hotmail.co.uk"},
 ]
-description = "Minimal Dungeons and Dragons 5.5e Character Sheet Creation Tool based on dungeonsheets make-sheets"
+description = "Minimal Dungeons and Dragons 2024 5e Character Sheet Creation Tool based on dungeonsheets make-sheets"
 readme = "README.rst"
 license = {"file"= "LICENSE"}
 requires-python = ">=3.9"
