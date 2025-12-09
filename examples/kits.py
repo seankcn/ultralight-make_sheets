@@ -31,7 +31,7 @@ scholars_pack = """backpack, book of lore, bottle of ink, ink pen,
 
 
 if __name__ == "__main__":
-    from dungeonsheets.equipment_reader import equipment_weight_parser
+    from ul_make_sheets.equipment_reader import equipment_weight_parser
     quantities = {"ball_bearings":350, "string": 23, "candles": 4,
                   "pitons":18, "oil":3, "rations":2, "rope":15,
                   "cases":3, "paper":5, "torches":7, "costumes":2,

@@ -7,7 +7,7 @@ sheet by running ``makesheets`` from the command line.
 
 # To add your own content, write a .py file with your definitions.
 # Then, import here using the 'import_homebrew' function.
-from dungeonsheets import import_homebrew
+from ul_make_sheets import import_homebrew
 # from dungeonsheets.equipment_reader import explorers_pack
 HB_races = import_homebrew("HB_races.py")
 kits = import_homebrew("kits.py")

@@ -5,8 +5,8 @@ used.
 
 """
 
-from dungeonsheets import race
-from dungeonsheets import features as feats
+from ul_make_sheets import race
+from ul_make_sheets import features as feats
 # from dungeonsheets import mecanics
 
 class WildCompanion(feats.Feature):
