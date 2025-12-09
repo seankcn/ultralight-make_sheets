@@ -3,15 +3,16 @@
 ================
 
 A very lightweight tool to create minimal character sheets for Dungeons and
-Dragons 5th edition (D&D 5.5e) based on 
-(dungeonsheets)[https://github.com/canismarko/dungeon-sheets] 
-and using (minimal latex docker images)[https://github.com/kjarosh/latex-docker].
+Dragons 5th edition (D&D 5.5e) based on dungeonsheets_ and using `minimal latex docker images`_.
+
+.. _dungeonsheets: https://github.com/canismarko/dungeon-sheets
+.. _minimal latex docker images: https://github.com/kjarosh/latex-docker
 
 Docker
 ======
 This repository is designed to be ran directly from a container.
 
-Run the following in the root of the repository. Substituting $(pwd) for a path 
+Run the following in the root of the repository. Substituting ``$(pwd)`` for a path 
 containing valid character files:
 
 .. code:: bash
